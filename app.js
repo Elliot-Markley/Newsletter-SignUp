@@ -1,5 +1,5 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
-
+const port = process.env.PORT || 3001;
 const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
@@ -54,8 +54,6 @@ app.post('/failure', (req, res) => {
     res.redirect("/");
 })
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000!.');
-});
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
