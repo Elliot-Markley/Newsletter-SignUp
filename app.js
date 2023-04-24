@@ -2,8 +2,7 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 const port = process.env.PORT || 3001;
 const express = require('express');
 const bodyParser = require('body-parser');
-const https = require('https');
-
+const { APIKEY, APISERVER } = require('./API.js');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,8 +13,8 @@ app.get('/', (req, res) => {
 })
 
 mailchimp.setConfig({
-    apiKey: process.env.apiKey,
-    server: 'us9',
+    apiKey: process.env.apiKey || APIKEY,
+    server: process.env.server || APISERVER,
 });
 
 app.post('/', (req, res) => {
