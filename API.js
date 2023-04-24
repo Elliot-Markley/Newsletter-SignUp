@@ -4,4 +4,4 @@ const APISERVER = 'us9';
 module.exports = {
     APIKEY,
     APISERVER,
-}
+};
