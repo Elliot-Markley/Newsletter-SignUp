@@ -2,7 +2,7 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 const port = process.env.PORT || 3001;
 const express = require('express');
 const bodyParser = require('body-parser');
-const { APIKEY, APISERVER } = require('./api.js');
+const { APIKEY, APISERVER } = require('./apikeys.js');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
